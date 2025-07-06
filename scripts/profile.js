@@ -18,7 +18,7 @@ async function nextPage() {
 
 document.addEventListener("DOMContentLoaded" , async () => {
   try {
-    const response = await fetch("http://localhost:8090/auth/me" , {
+    const response = await fetch("https://ecommerce-backend-production-cce0.up.railway.app/auth/me" , {
       method:"GET",   
       credentials:"include"
     })
@@ -155,7 +155,7 @@ window.cancelEdit = cancelEdit;
 
 document.getElementById("LogOut").addEventListener("click" , async () => {
   try {
-    const response = await fetch("http://localhost:8090/auth/logout", {
+    const response = await fetch("https://ecommerce-backend-production-cce0.up.railway.app/auth/logout", {
       method : "GET",
       credentials :"include"
     })
@@ -176,7 +176,7 @@ document.getElementById("LogOut").addEventListener("click" , async () => {
 async function showProducts(){
     try {
         const response = await fetch(
-          `http://localhost:8090/seller/getproducts/${userId}/${page}`,
+          `https://ecommerce-backend-production-cce0.up.railway.app/seller/getproducts/${userId}/${page}`,
           {
             method: "GET",
             credentials: "include",

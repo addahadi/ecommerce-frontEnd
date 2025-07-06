@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         productId: notification.product_id,
       };
       console.log(requestBody.productId)
-      const response = await fetch(`http://localhost:8090/products/get`, {
+      const response = await fetch(`https://ecommerce-backend-production-cce0.up.railway.app/products/get`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     await fetch(
-      `http://localhost:8090/notification/markasread/${notification.id}/read`,
+      `https://ecommerce-backend-production-cce0.up.railway.app/notification/markasread/${notification.id}/read`,
       {
         method: "POST",
       }
@@ -96,7 +96,7 @@ window.fetchNotifications = async function () {
   if (window.resultData) {
     const sellerId = window.resultData.user.Id;
     const response = await fetch(
-      `http://localhost:8090/notification/getNotifications?seller_id=${sellerId}`
+      `https://ecommerce-backend-production-cce0.up.railway.app/notification/getNotifications?seller_id=${sellerId}`
     );
     const notifications = await response.json();
 

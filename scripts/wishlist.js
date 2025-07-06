@@ -20,10 +20,13 @@ document.addEventListener("DOMContentLoaded" , async () => {
 
 async function fetchWishLists() {
     try{
-        const response = await fetch(`http://localhost:8090/wishlists/getwishlists/${pages}` , {
+        const response = await fetch(
+          `https://ecommerce-backend-production-cce0.up.railway.app/wishlists/getwishlists/${pages}`,
+          {
             method: "GET",
-            credentials :"include"
-        })
+            credentials: "include",
+          }
+        );
         if(response.ok){
             const result = await response.json()
             console.log(result.data)

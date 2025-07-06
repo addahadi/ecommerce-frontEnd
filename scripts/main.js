@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded' , async () => {
   
   try {
 
-    const response = await fetch("http://localhost:8090/products/getall" , {
+    const response = await fetch("https://ecommerce-backend-production-cce0.up.railway.app/products/getall" , {
       method : 'GET',
       credentials :"include"
     })
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded' , async () => {
   }
 
   try {
-    const response = await fetch("http://localhost:8090/products/gettopphone", {
+    const response = await fetch("https://ecommerce-backend-production-cce0.up.railway.app/products/gettopphone", {
       method: "GET",
       credentials: "include",
     });
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded' , async () => {
   }
 
   try {
-    const response = await fetch("http://localhost:8090/products/getlowercomputer", {
+    const response = await fetch("https://ecommerce-backend-production-cce0.up.railway.app/products/getlowercomputer", {
       method: "GET",
       credentials: "include",
     });

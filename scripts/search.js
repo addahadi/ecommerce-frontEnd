@@ -107,7 +107,7 @@ async function performSearch() {
 
   try {
     const response = await fetch(
-      `http://localhost:8090/products/searchproduct?${query}`,
+      `https://ecommerce-backend-production-cce0.up.railway.app/products/searchproduct?${query}`,
       {
         method: "GET",
         credentials: "include",

@@ -22,7 +22,7 @@ async function getSellerInfo() {
     const params = new URLSearchParams(window.location.search);
     const sellerId = params.get("id");
     try {
-        const response = await fetch(`http://localhost:8090/seller/getinfo/${sellerId}` ,{
+        const response = await fetch(`https://ecommerce-backend-production-cce0.up.railway.app/seller/getinfo/${sellerId}` ,{
             method: 'GET',
             credentials: 'include'
         });
@@ -43,7 +43,7 @@ async function getSellerProducts(){
     const sellerId = params.get("id");
     try {
         const response = await fetch(
-          `http://localhost:8090/seller/getproducts/${sellerId}/${page}`,
+          `https://ecommerce-backend-production-cce0.up.railway.app/seller/getproducts/${sellerId}/${page}`,
           {
             method: "GET",
             credentials: "include",

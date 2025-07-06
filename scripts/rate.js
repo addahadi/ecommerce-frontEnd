@@ -15,13 +15,16 @@ async function fetchRating() {
       productId
     }
     try {
-      const response = await fetch("http://localhost:8090/products/getrating", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },      
-        body: JSON.stringify(requestBody),
-      });
+      const response = await fetch(
+        "https://ecommerce-backend-production-cce0.up.railway.app/products/getrating",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(requestBody),
+        }
+      );
       if(response.ok){
         const result = await response.json()
         showRating(result)

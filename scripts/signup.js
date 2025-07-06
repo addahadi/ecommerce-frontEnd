@@ -77,7 +77,7 @@ form.addEventListener("submit", async (e) => {
     }
 
     try {
-      const response = await fetch("http://localhost:8090/auth/signup", {
+      const response = await fetch("https://ecommerce-backend-production-cce0.up.railway.app/auth/signup", {
         method: "POST",
         body: formData,
       });
@@ -97,7 +97,7 @@ form.addEventListener("submit", async (e) => {
     if (!window.validateLoginForm(email, password)) return;
 
     try {
-      const response = await fetch("http://localhost:8090/auth/login", {
+      const response = await fetch("https://ecommerce-backend-production-cce0.up.railway.app/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

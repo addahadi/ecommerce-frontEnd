@@ -26,7 +26,7 @@ async function getProduct(){
     }
 
     try {
-        const response = await fetch("http://localhost:8090/products/get", {
+        const response = await fetch("https://ecommerce-backend-production-cce0.up.railway.app/products/get", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -48,7 +48,7 @@ async function getProduct(){
 function showProductInfo(data){
   document.getElementById(
     "mainImg"
-  ).src = `http://localhost:8090/uploads/${data.imges[0]}`;
+  ).src = `https://ecommerce-backend-production-cce0.up.railway.app/uploads/${data.imges[0]}`;
   document.getElementById("title").textContent = data.title;
   document.getElementById("description").textContent = data.descr;
   document.getElementById("price").textContent = data.price + "$";
@@ -62,7 +62,7 @@ function showProductInfo(data){
 
   document.getElementById(
     "img_logo"
-  ).src = `http://localhost:8090/uploads/${data.store_logo}`;
+  ).src = `https://ecommerce-backend-production-cce0.up.railway.app/uploads/${data.store_logo}`;
   const link = document.getElementById("logo"); 
   link.textContent = data.store_name; 
   link.href = `/pages/sellerProfile.html?id=${data.user_Id}`; 
@@ -71,7 +71,7 @@ function showProductInfo(data){
   thumbnail.innerHTML = "";
   data.imges.forEach((imgUrl) => {
     const imgContainer = document.createElement("img");
-    imgContainer.src = `http://localhost:8090/uploads/${imgUrl}`;
+    imgContainer.src = `https://ecommerce-backend-production-cce0.up.railway.app/uploads/${imgUrl}`;
     imgContainer.classList.add("thumbnail");
 
     imgContainer.addEventListener("click", () => {
@@ -102,7 +102,7 @@ async function fetchWishList(){
 
 
   try{
-    const respence = await fetch("http://localhost:8090/wishlists/get" , {
+    const respence = await fetch("https://ecommerce-backend-production-cce0.up.railway.app/wishlists/get" , {
       method : "GET",
       credentials : "include"
     });
@@ -132,7 +132,7 @@ async function getRecommendedList()  {
   const productId = params.get("id");
   try {
     const response = await fetch(
-      `http://localhost:8090/products/getrecommendedlist/${productId}`,
+      `https://ecommerce-backend-production-cce0.up.railway.app/products/getrecommendedlist/${productId}`,
       {
         method: "GET",
         credentials: "include",
@@ -163,8 +163,8 @@ function toggleToWishList(){
     WishButton.addEventListener("click", async () => {
         try {
           
-          const url = added ? `http://localhost:8090/wishlists/delWishlist`
-            : "http://localhost:8090/wishlists/addWishlist";
+          const url = added ? `https://ecommerce-backend-production-cce0.up.railway.app/wishlists/delWishlist`
+            : "https://ecommerce-backend-production-cce0.up.railway.app/wishlists/addWishlist";
 
         
           const response = await fetch(url, {
@@ -255,7 +255,7 @@ async function sendMessage(seller_id){
   }
 
   try {
-    const response = await fetch("http://localhost:8090/products/message", {
+    const response = await fetch("https://ecommerce-backend-production-cce0.up.railway.app/products/message", {
       method : "POST", 
       headers : {
         "Content-Type": "application/json",
